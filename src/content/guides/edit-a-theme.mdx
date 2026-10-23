@@ -1,0 +1,110 @@
+---
+title: Edit a theme
+description: Change the Modern Minimal preset to violet brand colors, check contrast, save it, and install it.
+---
+
+After this guide, you will have a copy of **Modern Minimal** with a violet
+primary color, round corners, and the Geist font, in both modes. The guide
+uses every editor tab. For a short description of each control, see
+[Modify a theme](/themes/modify-a-theme).
+
+## Before you begin
+
+- A tweakcn account, to save the theme. Without an account, you can copy the
+  CSS at the end.
+- A shadcn/ui project, to install the theme.
+
+<Steps>
+<Step title="Load the preset">
+
+Open [Modern Minimal in the editor](https://tweakcn.com/editor/theme?theme=modern-minimal&tab=colors).
+The theme name in the top left shows **Modern Minimal**.
+
+<Frame caption="Modern Minimal on the Colors tab. Primary is #3b82f6.">
+![Editor with Modern Minimal loaded](/images/editor-preset.png)
+</Frame>
+
+</Step>
+<Step title="Change the primary color in light mode">
+
+In the **Primary** group, select the **Background** text field. Replace
+`#3b82f6` with `#7c3aed`. Press Tab.
+
+The buttons and the charts in the preview change to violet. The theme name
+changes to **Modern Minimal\***. The `*` shows unsaved changes.
+
+</Step>
+<Step title="Change the ring and accent">
+
+Make the focus ring and hover color match the new primary:
+
+| Group | Field | Value |
+| --- | --- | --- |
+| Border & Input | Ring | `#7c3aed` |
+| Accent | Background | `#ede9fe` |
+| Accent | Foreground | `#4c1d95` |
+
+Press Tab after each value.
+
+</Step>
+<Step title="Change dark mode">
+
+Select the light/dark switch in the top bar. The preview changes to dark mode,
+and the fields show the dark values. Set these colors:
+
+| Group | Field | Value |
+| --- | --- | --- |
+| Primary | Background | `#8b5cf6` |
+| Border & Input | Ring | `#8b5cf6` |
+| Accent | Background | `#2e1065` |
+| Accent | Foreground | `#ddd6fe` |
+
+Switch back to light mode when you are done.
+
+</Step>
+<Step title="Change the font">
+
+Select **Typography**. Under **Font family**, open **Sans-Serif** and select
+**Geist**. The preview text changes to Geist.
+
+</Step>
+<Step title="Round the corners">
+
+Select **Other**. Move the **Radius** slider to `0.75` rem. Cards, buttons,
+and inputs get rounder corners.
+
+</Step>
+<Step title="Check the contrast">
+
+Open **⋮** in the top bar and select **Contrast**. Each pair must pass AA
+(4.5:1). White text on `#7c3aed` passes. If a pair fails, make the background
+darker or the text lighter.
+
+<Frame caption="The ⋮ menu has MCP and Contrast.">
+![Editor menu with MCP and Contrast items](/images/more-menu.png)
+</Frame>
+
+</Step>
+<Step title="Save the theme">
+
+Select **Save** and enter `Modern Violet`. The theme name changes to
+**Modern Violet**, and the theme is in **Saved Themes**.
+
+</Step>
+<Step title="Install the theme">
+
+Select **Code**. The command now uses the saved theme ID:
+
+```bash
+npx shadcn@latest add https://tweakcn.com/r/themes/<theme-id>
+```
+
+Run it in your project. Then [load the Geist font](/guides/load-theme-fonts).
+
+</Step>
+</Steps>
+
+## Undo a mistake
+
+Use the undo arrow in the top bar. To start again, select **Reset**. Reset
+returns to Modern Minimal without a confirmation.

@@ -1,0 +1,82 @@
+---
+title: Load the theme fonts
+description: Load the fonts that a tweakcn theme names, in Next.js and Vite.
+---
+
+A tweakcn theme names its fonts, for example `--font-sans: Inter, sans-serif`.
+The theme does not load the font files. Without this guide, the browser uses a
+fallback font.
+
+The [Quickstart](/quickstart) and [Start a project with a theme](/cli/shadcn-create)
+send you here after the install.
+
+## Find the font names
+
+Open your global CSS file and find these lines:
+
+```css
+--font-sans: Inter, sans-serif;
+--font-serif: Source Serif 4, serif;
+--font-mono: JetBrains Mono, monospace;
+```
+
+## Load the fonts
+
+<Tabs>
+<Tab title="Next.js">
+
+The `create-next-app` layout loads Geist into `--font-sans`. The theme replaced
+that variable, so the Geist link is broken. Load the theme font with
+`next/font/google`, and give it a different variable name.
+
+```tsx app/layout.tsx
+import { Inter, JetBrains_Mono } from "next/font/google"
+import "./globals.css"
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono" })
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
+      <body>{children}</body>
+    </html>
+  )
+}
+```
+
+Then point the theme at the new variables in `app/globals.css`:
+
+```css
+--font-sans: var(--font-inter), sans-serif;
+--font-mono: var(--font-jetbrains-mono), monospace;
+```
+
+Change the variables in `:root`, `.dark`, and `@theme inline` if they appear there.
+
+</Tab>
+<Tab title="Vite">
+
+Add a Google Fonts link to `index.html`, in `<head>`:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+```
+
+The CSS variables need no change.
+
+</Tab>
+</Tabs>
+
+## Check the font
+
+Run the app. Open the browser developer tools, select some text, and look at
+**Computed** > **Rendered Fonts**. The font name must be the theme font, not a
+system font.
+
+<Note type="info" title="The layout.tsx snippet">
+The **Code** dialog has a `layout.tsx` tab for Next.js. That snippet imports
+only the light-mode fonts. If dark mode uses other fonts, add them yourself.
+</Note>

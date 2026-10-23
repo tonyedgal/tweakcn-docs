@@ -1,0 +1,84 @@
+---
+title: Import a theme
+description: Move the theme of an existing shadcn/ui app into tweakcn, edit it, and put it back.
+---
+
+After this guide, the theme of your app is in the tweakcn editor. You can
+then edit it and copy it back. The feature summary is in
+[Import your CSS](/themes/import-css).
+
+## Before you begin
+
+- A shadcn/ui app with its theme in a global CSS file, for example
+  `app/globals.css` or `src/index.css`.
+
+<Steps>
+<Step title="Start from a clean theme">
+
+Open [the editor](https://tweakcn.com/editor/theme), open the theme picker, and
+select **Default**. The import merges with the current theme. A clean start
+makes sure that no value from another preset stays.
+
+</Step>
+<Step title="Copy the variables from your app">
+
+Open your global CSS file. Copy the `:root { ... }` block and the
+`.dark { ... }` block. For example:
+
+```css
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+}
+```
+
+Do not copy `@theme inline` or `@layer base`. The import reads only `:root`
+and `.dark`.
+
+</Step>
+<Step title="Paste into the import dialog">
+
+Select **Import** in the top bar. Paste the CSS and select **Import**.
+
+<Frame caption="Paste the :root and .dark blocks, then select Import.">
+![Import Custom CSS dialog](/images/import-dialog.png)
+</Frame>
+
+</Step>
+<Step title="Check the result">
+
+Look at the preview in both modes. Compare three colors with your app:
+background, primary, and border. The editor shows colors as hex, but stores
+them as `oklch`.
+
+</Step>
+<Step title="Edit and save">
+
+Make your changes, then select **Save**. To put the theme back in your app,
+follow [Export a theme](/guides/export-a-theme).
+
+</Step>
+</Steps>
+
+## Import a Tailwind v3 theme
+
+Tailwind v3 themes often use bare HSL values:
+
+```css
+:root {
+  --primary: 222.2 47.4% 11.2%;
+}
+```
+
+The import accepts this format. When you export, select **Tailwind v3** to get
+the same format back.

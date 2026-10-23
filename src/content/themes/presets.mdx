@@ -1,0 +1,68 @@
+---
+title: Use a preset
+description: Load one of the 42 built-in tweakcn themes, compare presets, and link to a preset.
+---
+
+A preset is a complete theme for light and dark mode. Use a preset when you
+want a finished look, or as a start for your own theme.
+
+## Open the theme list
+
+<Steps>
+<Step title="Open the editor">
+
+Go to [tweakcn.com/editor/theme](https://tweakcn.com/editor/theme).
+
+</Step>
+<Step title="Open the theme picker">
+
+Select the theme name at the top left. The list shows 43 themes: **Default**
+and 42 presets.
+
+<Frame caption="The theme picker. Each row shows the main colors of the theme.">
+![Theme picker list with built-in themes](/images/theme-picker.png)
+</Frame>
+
+</Step>
+<Step title="Select a preset">
+
+Select a row. The preview changes at once. Type in **Search themes...** to find
+a name. Select the shuffle icon to load a random preset.
+
+</Step>
+</Steps>
+
+## Compare presets on real components
+
+The preview has tabs: **Custom**, **Cards**, **Dashboard**, **Application**,
+**Marketing**, and more in the **⋮** menu (**Mail**, **Typography**, **Color
+Palette**). Check a preset on more than one tab before you choose it.
+
+Use the light/dark switch in the top bar to see the other mode. To see a preset on your own app, see [Preview a theme on your site](/guides/preview-on-your-site).
+
+## Link to a preset
+
+Add `?theme=<preset>` to the editor URL. The editor loads that preset.
+
+```text
+https://tweakcn.com/editor/theme?theme=supabase
+```
+
+Preset keys are lowercase with hyphens. Examples: `modern-minimal`,
+`quantum-rose`, `cyberpunk`, `claude`, `supabase`, `vercel`, `caffeine`,
+`catppuccin`. The full list is in
+[the registry index](https://tweakcn.com/r/themes/registry.json).
+
+<Note type="info" title="The URL does not follow the picker">
+When you select a preset in the list, the URL does not change. After the editor
+reads `?theme=`, it removes the parameter from the URL.
+</Note>
+
+## Install the preset
+
+```bash
+npx shadcn@latest add https://tweakcn.com/r/themes/supabase.json
+```
+
+See [Install themes with the CLI](/cli/install-themes) for other package managers.
+To change the preset first, see [Modify a theme](/themes/modify-a-theme).

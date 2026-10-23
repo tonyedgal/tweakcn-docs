@@ -1,0 +1,57 @@
+---
+title: Import your CSS
+description: Load existing shadcn/ui CSS variables into the tweakcn editor.
+---
+
+Import your current CSS to edit your app's theme in tweakcn. The editor reads
+the variables from `:root` and `.dark`.
+
+<Steps>
+<Step title="Copy your theme CSS">
+
+Open your global CSS file, for example `app/globals.css`. Copy the `:root`
+block and the `.dark` block.
+
+</Step>
+<Step title="Open the import dialog">
+
+In the editor top bar, select **Import**.
+
+<Frame caption="The Import Custom CSS dialog.">
+![Import Custom CSS dialog with a CSS example](/images/import-dialog.png)
+</Frame>
+
+</Step>
+<Step title="Paste and import">
+
+Paste the CSS and select **Import**. The preview shows your theme.
+
+</Step>
+</Steps>
+
+## What the import changes
+
+- The import merges your variables with the current theme. A variable that is
+  not in your CSS keeps its current value. To import into a clean theme, select
+  **Default** first.
+- The editor converts colors to `oklch`.
+- The import accepts hex, `rgb()`, `hsl()`, `oklch()`, and bare HSL values such
+  as `222.2 84% 4.9%`.
+
+## Fix an import error
+
+If the editor shows "Invalid CSS format. CSS should contain variable
+definitions like --primary: #color", check that:
+
+- Each variable starts with `--`.
+- The variables are inside `:root { }` or `.dark { }`.
+- Each line ends with `;`.
+
+<Note type="info" title="Small screens">
+The **Import** button is hidden on narrow windows. Make the window wider.
+</Note>
+
+## Next steps
+
+To move your app's theme into tweakcn and back, see the guides
+[Import a theme](/guides/import-a-theme) and [Export a theme](/guides/export-a-theme).

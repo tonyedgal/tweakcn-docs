@@ -1,0 +1,56 @@
+---
+title: Start a project with a theme
+description: Use shadcn create with a tweakcn registry URL to make a new themed project in one command.
+---
+
+After this guide, you will have a new shadcn/ui project that already uses a
+tweakcn theme. You run one command.
+
+## Before you begin
+
+- Node.js 20 or later.
+- The registry URL of a theme. See [Install themes with the CLI](/cli/install-themes).
+
+## Create the project
+
+Give `shadcn create` the theme URL as the last argument.
+
+```bash
+npx shadcn@latest create -t next -b radix -n my-app --no-monorepo -y https://tweakcn.com/r/themes/modern-minimal.json
+```
+
+| Option | Value in the example | Effect |
+| --- | --- | --- |
+| `-t` | `next` | Framework template. Also `vite`, `start`, `react-router`, `astro`, `laravel`. |
+| `-b` | `radix` | Component base library. Also `base`. |
+| `-n` | `my-app` | Project folder name. |
+| `--no-monorepo` | | Creates one app, not a monorepo. |
+| `-y` | | Accepts the defaults. |
+
+The command creates the app, adds `components/ui/button.tsx` and
+`lib/utils.ts`, and writes the theme variables into `app/globals.css`.
+
+## Check the result
+
+```bash
+cd my-app
+grep -- "--primary:" app/globals.css
+```
+
+The first line shows `--primary: oklch(0.6231 0.1880 259.8145)`. This is the
+Modern Minimal blue.
+
+<Note type="warning" title="Fonts are not loaded">
+The template layout still loads Geist into `--font-sans`, and the theme replaces
+that variable with `Inter, sans-serif`. Inter is not installed, so the browser
+uses a fallback font. Follow [Load the theme fonts](/guides/load-theme-fonts).
+</Note>
+
+## Use your own theme
+
+Replace the URL with the URL of a saved theme. A saved theme URL has no `.json`
+extension.
+
+```bash
+npx shadcn@latest create -t next -b radix -n my-app --no-monorepo -y https://tweakcn.com/r/themes/cmvkq8481000004l1f8i0dc80
+```

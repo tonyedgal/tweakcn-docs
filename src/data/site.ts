@@ -181,8 +181,7 @@ export const siteConfig: SiteConfig = {
   repoUrl: "https://github.com/tonyedgal/tweakcn-docs",
   links: [
     { label: "Get started", href: "/quickstart" },
-    { label: "Support", href: "https://github.com/tonyedgal/tweakcn-docs/issues/new" },
-    { label: "GitHub", href: "https://github.com/tonyedgal/tweakcn-docs" },
-    { label: "Changelog", href: "/changelog" },
+    { label: "tweakcn editor", href: "https://tweakcn.com/editor/theme" },
+    { label: "tweakcn on GitHub", href: "https://github.com/jnsahaj/tweakcn" },
   ],
 };

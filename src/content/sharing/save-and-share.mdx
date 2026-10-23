@@ -1,0 +1,66 @@
+---
+title: Save and share a theme
+description: Save a tweakcn theme to your account, open it again, and send a link to other people.
+---
+
+After this guide, your theme has a permanent link and an install command.
+
+## Before you begin
+
+- A tweakcn account. Sign in with GitHub or Google.
+- Free accounts can save 10 themes. Pro accounts have no limit.
+
+## Save the theme
+
+<Steps>
+<Step title="Select Save">
+
+In the top bar, select **Save**.
+
+</Step>
+<Step title="Name the theme">
+
+Enter a name, for example `Warm Ivory Coral`, and confirm. The theme gets an
+ID, for example `cmvkq8481000004l1f8i0dc80`.
+
+</Step>
+<Step title="Find the theme again">
+
+Open the theme picker. Your themes are under **Saved Themes**, above **Built-in Themes**.
+
+</Step>
+</Steps>
+
+After you save, the **Save** button changes to **Publish**. See
+[Publish to the community](/sharing/publish).
+
+## Share a link
+
+Select **Share** to copy a link.
+
+| Theme type | Link |
+| --- | --- |
+| Saved theme | `https://tweakcn.com/themes/<theme-id>` |
+| Preset | `https://tweakcn.com/editor/theme?theme=<preset>` |
+
+A saved theme page works for people who are not signed in. The page shows the
+theme on components and has the install command.
+
+<Frame caption="The public page of a saved theme.">
+![Public page of the saved theme Warm Ivory Coral](/images/saved-theme.png)
+</Frame>
+
+## Install a saved theme
+
+```bash
+npx shadcn@latest add https://tweakcn.com/r/themes/cmvkq8481000004l1f8i0dc80
+```
+
+Do not add `.json`. See [Install themes with the CLI](/cli/install-themes).
+
+## Use the theme in other tools
+
+- **Export to Figma** in the header applies the theme to a Figma UI kit. See [Export to Figma](/guides/export-to-figma).
+- **Open in v0** in the preview bar opens the theme in v0.
+
+To find, publish, or delete saved themes, see [Manage saved themes](/sharing/manage-themes).

@@ -1,0 +1,69 @@
+---
+title: Troubleshooting
+description: Fix common problems when you install and edit tweakcn themes.
+---
+
+## The font does not change
+
+**Cause:** The theme names a font but does not load it.
+
+**Fix:** Follow [Load the theme fonts](/guides/load-theme-fonts).
+
+## The install command returns HTTP 500
+
+**Cause:** You added `.json` to a saved theme URL.
+
+**Fix:** Use `https://tweakcn.com/r/themes/<theme-id>` without `.json`. Only
+presets use `.json`.
+
+## My edits are not in the installed theme
+
+**Cause:** You edited a preset and ran the preset command. The preset URL
+always installs the original preset.
+
+**Fix:** [Save the theme](/sharing/save-and-share) and install from the saved
+theme URL, or copy the CSS from **Code**.
+
+## A color does not change
+
+**Cause:** The value applies on blur. Return alone does not apply it.
+
+**Fix:** Press Tab after you type the value.
+
+## Dark mode has the old colors
+
+**Cause:** Each mode has its own colors.
+
+**Fix:** Switch to dark mode and edit the colors again. See
+[Modify a theme](/themes/modify-a-theme#change-colors).
+
+## The CSS has `--tracking-normal: var(--tracking-normal);`
+
+**Cause:** The install writes this line in `@theme inline`. The variable refers
+to itself, so it has no value.
+
+**Fix:** Change the line to use the letter spacing variable:
+
+```css
+--tracking-normal: var(--letter-spacing);
+```
+
+## Two hyphens change to a dash in the AI prompt
+
+**Cause:** The prompt box changes `--` to an em dash.
+
+**Fix:** Write token names without the `--` prefix, for example `primary`.
+
+## The Import button is missing
+
+**Cause:** The editor hides **Import** on narrow windows.
+
+**Fix:** Make the window wider.
+
+## I cannot use AI
+
+| Message | Fix |
+| --- | --- |
+| **Sign in for AI** | Sign in with GitHub or Google. |
+| **Get Pro** | You used your 5 free requests. Upgrade, or edit by hand. |
+| Too many requests | Wait one minute. |

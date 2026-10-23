@@ -1,0 +1,59 @@
+---
+title: Enhance a theme with AI
+description: Use Remix, Tweak, and Enhance prompt to change an existing theme with AI.
+---
+
+Use these modes when you already have a theme and want the AI to change it. Each
+request uses one of your AI requests.
+
+## Choose a mode
+
+| Mode | Use it to | Example prompt |
+| --- | --- | --- |
+| **Create** | Make a new theme. | Retro terminal UI, green phosphor glow. |
+| **Remix** | Make a new theme from a preset. | `@Catppuccin` with a coral primary. |
+| **Tweak** | Change part of the current theme. | Make the borders softer and the radius larger. |
+
+## Tweak the current theme
+
+<Steps>
+<Step title="Load the theme">
+
+Open the theme you want to change. A saved theme opens from **Saved Themes** in
+the theme picker.
+
+</Step>
+<Step title="Select Tweak">
+
+On the **Generate** tab, select **Tweak**.
+
+</Step>
+<Step title="Describe one change">
+
+Write one change in each request. For example:
+
+```text
+Make dark mode warmer. Keep the primary color.
+```
+
+</Step>
+<Step title="Compare the result">
+
+Use undo to compare the old theme and the new theme. Undo returns to the theme
+before the request.
+
+</Step>
+</Steps>
+
+## Improve your prompt
+
+Select the **Enhance prompt** icon in the prompt box. Hover over the icons to find it. The AI rewrites your prompt
+with more detail. Read the new prompt and edit it before you send it.
+
+## Tips
+
+- Name the token: "primary", "sidebar", "chart 2". The AI maps your words to
+  shadcn/ui variables.
+- Say what to keep. "Keep the fonts" stops a font change.
+- Type `-` once. Two hyphens (`--`) change to an em dash in the prompt box.
+  Write variable names without the `--` prefix.

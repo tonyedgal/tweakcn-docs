@@ -1,0 +1,103 @@
+---
+title: Modify a theme
+description: Change the colors, fonts, radius, spacing, and shadows of a tweakcn theme for light and dark mode.
+---
+
+After this guide, you can change any value in a theme and install the result.
+The editor has three tabs for manual edits: **Colors**, **Typography**, and
+**Other**.
+
+## Change colors
+
+<Frame caption="The Colors tab. Each group holds a color and its foreground color.">
+![Colors tab with Primary and Secondary groups](/images/editor-preset.png)
+</Frame>
+
+<Steps>
+<Step title="Find the color">
+
+Colors are in groups: **Primary**, **Secondary**, **Accent**, **Base**,
+**Card**, **Popover**, **Muted**, **Destructive**, **Border & Input**,
+**Chart**, and **Sidebar**. Type in **Search colors...** to find one.
+
+</Step>
+<Step title="Enter the new value">
+
+Select the swatch to use a color picker, or type in the text field. The field
+accepts hex values and Tailwind color names.
+
+</Step>
+<Step title="Apply the value">
+
+Move the focus out of the field. Press Tab or select another place. The value
+applies on blur. Return alone does not apply it.
+
+</Step>
+</Steps>
+
+<Note type="warning" title="Edit each mode">
+Light and dark mode have separate colors. A change in light mode does not
+change dark mode. Use the light/dark switch, then edit the same color again.
+</Note>
+
+The **SYNC** control in the **Sidebar** group copies the main colors to the
+sidebar colors.
+
+## Change fonts
+
+<Frame caption="The Typography tab. Choose a sans, serif, and mono font.">
+![Typography tab with font pickers](/images/editor-typography.png)
+</Frame>
+
+Under **Font family**, select a font for **Sans-Serif**, **Serif**, and **Mono**. The list has
+Google Fonts, with filters by category. Use the **Tracking** slider to change
+`--letter-spacing` in `em`.
+
+Fonts and letter spacing apply to both modes.
+
+<Note type="warning" title="Your app must load the fonts">
+The editor loads fonts for the preview only. The exported CSS sets the font
+names but does not load them. See [Load the theme fonts](/guides/load-theme-fonts).
+</Note>
+
+## Change radius, spacing, and shadows
+
+<Frame caption="The Other tab. HSL adjustments change all colors at once.">
+![Other tab with HSL, radius, spacing, and shadow controls](/images/editor-other.png)
+</Frame>
+
+| Control | Variable | Applies to |
+| --- | --- | --- |
+| HSL adjustments: Hue, Saturation, Lightness | All colors | Current mode |
+| Radius | `--radius` (rem) | Both modes |
+| Spacing | `--spacing` (rem, default `0.25`) | Both modes |
+| Shadow color | `--shadow-color` | Current mode |
+| Shadow opacity, blur, spread, offset | `--shadow-*` | Both modes |
+
+## Undo a change
+
+Use the undo and redo arrows in the top bar. The editor keeps 30 steps. Fast
+edits in 500 ms count as one step.
+
+**Reset** returns the theme to the last loaded preset. Reset has no
+confirmation dialog.
+
+The editor saves your work in the browser. When you open the editor again, your
+last theme is there. To keep the theme on other devices, [save it](/sharing/save-and-share).
+
+## Check the contrast
+
+Open **⋮** > **Contrast**. The checker tests each text and background pair
+against WCAG AA (4.5:1). Fix each pair that fails.
+
+<Note type="info" title="Default fails one pair">
+The Default theme fails **Muted** in light mode, at 4.34:1.
+</Note>
+
+## Install your changes
+
+The preset install command does not include your edits. Save the theme and use
+the saved theme URL, or copy the CSS from **Code**. See
+[Install an edited preset](/cli/install-themes#install-an-edited-preset).
+
+For a full worked example, see the guide [Edit a theme](/guides/edit-a-theme).

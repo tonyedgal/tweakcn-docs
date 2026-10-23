@@ -1,47 +1,114 @@
 ---
 title: Quickstart
-description: Guide a new reader through one useful workflow and show them how to verify it.
+description: Install a tweakcn preset in a new Next.js app and check light and dark mode. You do not need an account.
 ---
 
-A strong quickstart produces one meaningful result. Replace the placeholders
-below with the shortest supported path for your product.
+After this guide, you will have a Next.js app with shadcn/ui and the
+**Modern Minimal** theme from tweakcn. The guide takes about 10 minutes.
 
 ## Before you begin
 
-List only the requirements needed for this workflow:
+- Node.js 20 or later, with `npm`.
+- A terminal and a web browser.
 
-- An account or credential, when required
-- A supported runtime, device, browser, or operating system
-- Permission to create or change the resource used in the example
+To start a project and apply the theme in one command, see
+[Start a project with a theme](/cli/shadcn-create).
 
 <Steps>
-  <Step title="Install the required tool">
-    Give readers one recommended installation command.
+<Step title="Create a Next.js app">
 
-    ```bash
-    npm install your-package
-    ```
-  </Step>
-  <Step title="Add the minimum configuration">
-    Include only the values needed for the first successful run.
+```bash
+npx create-next-app@latest my-app --ts --tailwind --eslint --app --no-src-dir --use-npm --yes
+cd my-app
+```
 
-    ```bash
-    your-cli init
-    ```
-  </Step>
-  <Step title="Complete the first task">
-    Use a realistic example that produces an observable result.
+</Step>
+<Step title="Add shadcn/ui">
 
-    ```bash
-    your-cli start
-    ```
-  </Step>
-  <Step title="Verify the result">
-    State exactly what the reader should see and how to recover when it does not appear.
-  </Step>
+```bash
+npx shadcn@latest init -y -d
+npx shadcn@latest add button card
+```
+
+The first command creates `components.json` and adds the default theme to
+`app/globals.css`.
+
+</Step>
+<Step title="Choose a theme in tweakcn">
+
+Open [the editor with Modern Minimal](https://tweakcn.com/editor/theme?theme=modern-minimal).
+Select **Code**. The **Theme Code** dialog shows the install command.
+
+<Frame caption="The Theme Code dialog. The command at the top installs the theme.">
+![Theme Code dialog with the shadcn add command](/images/code-panel.png)
+</Frame>
+
+</Step>
+<Step title="Install the theme">
+
+```bash
+npx shadcn@latest add https://tweakcn.com/r/themes/modern-minimal.json
+```
+
+If the CLI asks to overwrite files, answer yes. The command updates
+`app/globals.css`.
+
+</Step>
+<Step title="Load the theme fonts">
+
+The theme sets `--font-sans: Inter, sans-serif`, but the command does not load
+Inter. Follow [Load the theme fonts](/guides/load-theme-fonts) to fix the font.
+
+</Step>
+<Step title="Show the theme">
+
+Replace `app/page.tsx` with this code.
+
+```tsx
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
+export default function Home() {
+  return (
+    <main className="flex min-h-screen items-center justify-center p-8">
+      <Card className="w-80">
+        <CardHeader>
+          <CardTitle>Modern Minimal</CardTitle>
+        </CardHeader>
+        <CardContent className="flex gap-2">
+          <Button>Primary</Button>
+          <Button variant="outline">Outline</Button>
+        </CardContent>
+      </Card>
+    </main>
+  )
+}
+```
+
+Run `npm run dev` and open http://localhost:3000. The primary button is blue.
+
+</Step>
+<Step title="Check dark mode">
+
+Add the `dark` class to the `<html>` element in `app/layout.tsx`.
+
+```tsx
+<html lang="en" className="dark">
+```
+
+The page uses the dark colors from the theme. Remove the class when you are done.
+To add a theme switch, use [next-themes](https://ui.shadcn.com/docs/dark-mode/next).
+
+</Step>
 </Steps>
 
-## Choose the next task
+## Next steps
 
-Link to the guide that naturally follows this result. Avoid ending the reader’s
-journey with a generic list of every feature.
+<CardGroup cols="2">
+  <Card title="Modify a theme" icon="sliders-horizontal" href="/themes/modify-a-theme">
+    Change the preset before you install it.
+  </Card>
+  <Card title="Fix install problems" icon="wrench" href="/troubleshooting">
+    Solve font, color, and URL problems.
+  </Card>
+</CardGroup>

@@ -1,0 +1,67 @@
+---
+title: Preview a theme on your site
+description: Show the theme from the tweakcn editor on your own running app, before you install it.
+---
+
+The **Custom** preview tab loads your own app and applies the editor theme to
+it live. Use it to check a theme on your real pages.
+
+<Frame caption="The Custom tab before you enter a URL.">
+![Custom preview tab with setup steps](/images/live-preview.png)
+</Frame>
+
+## Before you begin
+
+- An app that uses shadcn/ui CSS variables on `:root`.
+- The app running at `http://localhost:3000`.
+
+<Steps>
+<Step title="Add the preview script">
+
+Add this script inside `<head>` of your app.
+
+<Tabs>
+<Tab title="Next.js (App)">
+
+```tsx app/layout.tsx
+<head>
+  <script src="https://tweakcn.com/live-preview.min.js" />
+</head>
+```
+
+</Tab>
+<Tab title="Vite">
+
+```html index.html
+<head>
+  <script src="https://tweakcn.com/live-preview.min.js"></script>
+</head>
+```
+
+</Tab>
+</Tabs>
+
+The Custom tab also has snippets for Next.js (Pages) and Remix.
+
+</Step>
+<Step title="Enter your URL">
+
+In the editor, select the **Custom** preview tab. Enter
+`http://localhost:3000` in the URL field.
+
+</Step>
+<Step title="Edit the theme">
+
+Change a color. Your app in the preview changes at once.
+
+</Step>
+</Steps>
+
+<Note type="warning" title="Development only">
+Add the script only in development. Remove it before you deploy.
+</Note>
+
+<Note type="info" title="Not tested in these docs">
+These steps come from the editor and the tweakcn source. Test them with your
+app before you depend on them.
+</Note>

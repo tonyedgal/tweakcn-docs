@@ -1,45 +1,79 @@
 ---
 title: Introduction
-description: Give readers a clear path from their first question to a result they can verify.
+description: Design a shadcn/ui theme in the browser, then install it in your app with one command.
 mode: home
 ---
 
 <Hero
-  title="Build documentation around the reader"
-  subtitle="Start with a useful first result, organize what follows, and publish every format from one reviewable source."
-  primaryLabel="Get started"
+  title="Theme your shadcn/ui app in minutes"
+  subtitle="tweakcn is a visual editor for shadcn/ui themes. Change colors, fonts, radius, and shadows on live components, then install the result with the shadcn CLI."
+  primaryLabel="Install your first theme"
   primaryHref="/quickstart"
-  secondaryLabel="Publish your docs"
-  secondaryHref="/guides/create-a-site"
+  secondaryLabel="Open the editor"
+  secondaryHref="https://tweakcn.com/editor/theme"
 />
 
-## Build the reader journey
+A shadcn/ui theme is a set of CSS variables. tweakcn edits those variables for
+light and dark mode and shows the result on real components. The editor is free
+and needs no account. You need an account only to save themes, share them, and
+use AI.
 
-Begin with the task that brings most readers to your documentation, then make
-the next useful step obvious.
+<Frame caption="The tweakcn editor. Controls are on the left. The live preview is on the right.">
+![The tweakcn theme editor with the Colors tab open](/images/editor-colors.png)
+</Frame>
+
+## Get started
 
 <CardGroup cols="2">
-  <Card title="Write your quickstart" icon="party-horn" href="/quickstart">
-    Turn prerequisites, setup, one realistic task, and verification into a short path.
+  <Card title="Install your first theme" icon="rocket" href="/quickstart">
+    Add a preset to a new Next.js app and check light and dark mode.
   </Card>
-  <Card title="Organize your navigation" icon="grid-round" href="/customization">
-    Group related tasks and references around how people use your product.
+  <Card title="Start a project with a theme" icon="terminal" href="/cli/shadcn-create">
+    Create a shadcn/ui project and apply a tweakcn theme in one command.
   </Card>
-  <Card title="Document your API" icon="code-simple" href="/api">
-    Replace `openapi.yaml` to publish browsable endpoint docs with a live playground.
-  </Card>
-  <Card title="Learn the Thally workflow" icon="wrench" href="/guides/create-a-site">
-    Create, publish, and update sites from the Cloud dashboard, the CLI, or your AI tools.
+  <Card title="Install themes with the CLI" icon="download" href="/cli/install-themes">
+    Learn the registry URLs for presets and saved themes.
   </Card>
 </CardGroup>
 
-## Publish from one source
+## Build your theme
 
-Thally turns the same reviewed content into HTML, search, agent discovery files,
-Markdown mirrors, and a read-only MCP surface — so people and AI tools read the
-same, current answer. Add only the locales your readers need.
+<CardGroup cols="2">
+  <Card title="Use a preset" icon="palette" href="/themes/presets">
+    Start from one of 42 built-in themes.
+  </Card>
+  <Card title="Modify a theme" icon="sliders-horizontal" href="/themes/modify-a-theme">
+    Change colors, fonts, radius, spacing, and shadows.
+  </Card>
+  <Card title="Create your own theme" icon="paintbrush" href="/themes/create-a-theme">
+    Build a theme from your brand colors.
+  </Card>
+  <Card title="Import your CSS" icon="file-code" href="/themes/import-css">
+    Bring an existing theme into the editor.
+  </Card>
+</CardGroup>
 
-<Note type="info" title="Start with the product, not the template">
-  Replace this page with the questions, terminology, and workflows your readers
-  already use. Keep `docs.json` focused on the path between those tasks.
-</Note>
+## Use AI
+
+<CardGroup cols="2">
+  <Card title="Generate a theme with AI" icon="sparkles" href="/ai/generate">
+    Describe a theme or upload an image.
+  </Card>
+  <Card title="Enhance a theme with AI" icon="wand" href="/ai/enhance">
+    Remix or tweak a theme with a prompt.
+  </Card>
+</CardGroup>
+
+## Save and share
+
+<CardGroup cols="2">
+  <Card title="Save and share a theme" icon="share" href="/sharing/save-and-share">
+    Keep your theme and send a link to your team.
+  </Card>
+  <Card title="Manage saved themes" icon="folder" href="/sharing/manage-themes">
+    Apply, publish, or delete the themes you saved.
+  </Card>
+  <Card title="Publish to the community" icon="globe" href="/sharing/publish">
+    List your theme on the community page.
+  </Card>
+</CardGroup>

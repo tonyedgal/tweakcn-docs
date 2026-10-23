@@ -1,0 +1,79 @@
+---
+title: Generate a theme from a screenshot
+description: Turn a screenshot of a product you like into a shadcn/ui theme with the tweakcn AI.
+---
+
+After this guide, you will have a saved theme that matches a screenshot. The
+example uses a screenshot of a SaaS dashboard with a warm ivory background and
+coral accents. The result is the theme
+[Warm Ivory Coral](https://tweakcn.com/themes/cmvkq8481000004l1f8i0dc80).
+
+## Before you begin
+
+- A tweakcn account with at least 1 AI request. See [Generate a theme with AI](/ai/generate).
+- A screenshot in PNG, JPEG, or WebP, smaller than 4 MB.
+
+<Steps>
+<Step title="Study the screenshot">
+
+Before you write, list the colors in the screenshot and their roles:
+
+| In the screenshot | shadcn/ui token |
+| --- | --- |
+| Off-white sidebar | `sidebar` |
+| Warm ivory app background | `background` |
+| Cream cards, beige borders | `card`, `border` |
+| Coral-orange buttons and icons | `primary` |
+| Near-black text | `foreground` |
+| Green, blue, and red badges | `chart-*`, `destructive` |
+
+</Step>
+<Step title="Attach the image">
+
+On the **Generate** tab, select **Create**, then **Image**, and choose the
+screenshot.
+
+</Step>
+<Step title="Write the prompt">
+
+Name each role from your list. This is the prompt from the example:
+
+```text
+Create a light-mode theme from this image. Use the warm off-white sidebar as sidebar, the warm ivory app background as background, and the lighter cream cards with their soft beige borders as card and border. Use the coral-orange from the progress bars, sparkle icons and AI buttons as primary. Keep text a soft near-black. Use the green, blue and red status badges for the chart colors and destructive.
+```
+
+</Step>
+<Step title="Check the result">
+
+The theme applies after about 15 seconds. The example result:
+
+| Token | Value |
+| --- | --- |
+| `background` | `#fcfbf9` |
+| `sidebar` | `#f7f6f0` |
+| `card` | `#ffffff` |
+| `border` | `#ece4dc` |
+| `primary` | `#f2994a` |
+| `foreground` | `#1a1a1a` |
+| Font | Inter |
+| Radius | `0.75rem` |
+
+The AI also made a dark mode. Switch the mode and check it.
+
+</Step>
+<Step title="Fix what is wrong">
+
+Change single colors on the **Colors** tab, or use **Tweak**. See
+[Modify a theme](/themes/modify-a-theme) and [Enhance a theme with AI](/ai/enhance).
+
+</Step>
+<Step title="Save and install">
+
+[Save the theme](/sharing/save-and-share), then install it:
+
+```bash
+npx shadcn@latest add https://tweakcn.com/r/themes/cmvkq8481000004l1f8i0dc80
+```
+
+</Step>
+</Steps>

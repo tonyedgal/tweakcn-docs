@@ -1,0 +1,78 @@
+---
+title: Create your own theme
+description: Build a theme from your brand colors in tweakcn, for light and dark mode.
+---
+
+After this guide, you will have a theme that uses your brand colors in both
+modes. Use this guide when you have brand colors but no theme. To start from a
+screenshot or a description, see [Generate a theme with AI](/ai/generate).
+
+## Before you begin
+
+- Your brand colors as hex values: one primary color and, if you have them,
+  secondary and accent colors.
+- Your brand fonts, if they are on Google Fonts.
+
+<Steps>
+<Step title="Start from a neutral preset">
+
+Open the theme picker and select **Default** or **Clean Slate**. A neutral
+preset gives you good base, border, and muted colors. You change only the brand
+colors.
+
+</Step>
+<Step title="Set the brand colors in light mode">
+
+On the **Colors** tab, set these colors:
+
+| Group | Color | Use |
+| --- | --- | --- |
+| Primary | Primary | Your main brand color. Buttons and links. |
+| Primary | Primary foreground | Text on primary. Use white or near-black. |
+| Accent | Accent | Hover and selected backgrounds. A light tint of the brand color. |
+| Base | Background | The page background. |
+| Base | Foreground | The main text color. |
+| Border & Input | Border, Ring | Borders and the focus ring. |
+
+Press Tab after each value.
+
+</Step>
+<Step title="Set chart colors">
+
+Set **Chart 1** to **Chart 5**. Use colors that are easy to tell apart. Start
+with your primary color.
+
+</Step>
+<Step title="Set the dark mode colors">
+
+Switch to dark mode. Set the same colors again. Dark mode usually needs:
+
+- A dark background and a light foreground.
+- A primary color with a little more lightness than in light mode.
+- Borders with low contrast against the background.
+
+</Step>
+<Step title="Set the fonts and radius">
+
+On **Typography**, select your fonts. On **Other**, set **Radius**. Use `0` for
+sharp corners and `0.75rem` or more for round corners.
+
+</Step>
+<Step title="Check the contrast">
+
+Open **⋮** > **Contrast**. Fix each failed pair in both modes.
+
+</Step>
+<Step title="Save the theme">
+
+Select **Save** and give the theme a name. See
+[Save and share a theme](/sharing/save-and-share).
+
+</Step>
+</Steps>
+
+## Copy colors from other themes
+
+To keep one part of another theme, open that theme, copy the values from
+**Code**, then [import](/themes/import-css) them into your theme. The import
+merges the values with your current theme.

@@ -17,21 +17,51 @@
   },
   "navbar": {
     "primary": {
-      "label": "Get started",
-      "href": "/quickstart"
+      "label": "Open the editor",
+      "href": "https://tweakcn.com/editor/theme"
     }
   },
   "tabs": [
     {
-      "tab": "Get started",
+      "tab": "Docs",
       "groups": [
         {
           "group": "Get started",
-          "pages": ["introduction", "quickstart"]
+          "pages": [
+            "introduction",
+            "quickstart"
+          ]
         },
         {
-          "group": "Design your docs",
-          "pages": ["components", "customization"]
+          "group": "Use the CLI",
+          "pages": [
+            "cli/shadcn-create",
+            "cli/install-themes"
+          ]
+        },
+        {
+          "group": "Themes",
+          "pages": [
+            "themes/presets",
+            "themes/modify-a-theme",
+            "themes/create-a-theme",
+            "themes/import-css"
+          ]
+        },
+        {
+          "group": "AI",
+          "pages": [
+            "ai/generate",
+            "ai/enhance"
+          ]
+        },
+        {
+          "group": "Save and share",
+          "pages": [
+            "sharing/save-and-share",
+            "sharing/manage-themes",
+            "sharing/publish"
+          ]
         }
       ]
     },
@@ -39,30 +69,35 @@
       "tab": "Guides",
       "groups": [
         {
-          "group": "Work with Thally",
+          "group": "Overview",
           "pages": [
-            "guides/create-a-site",
-            "guides/work-with-the-cli",
-            "guides/connect-ai-tools"
+            "guides/overview"
+          ]
+        },
+        {
+          "group": "Work with themes",
+          "pages": [
+            "guides/edit-a-theme",
+            "guides/theme-from-screenshot",
+            "guides/load-theme-fonts",
+            "guides/preview-on-your-site"
+          ]
+        },
+        {
+          "group": "Import and export",
+          "pages": [
+            "guides/import-a-theme",
+            "guides/export-a-theme",
+            "guides/export-to-figma"
+          ]
+        },
+        {
+          "group": "Help",
+          "pages": [
+            "troubleshooting"
           ]
         }
       ]
-    },
-    {
-      "tab": "API Reference",
-      "groups": [
-        {
-          "group": "Overview",
-          "pages": ["api/introduction", "api/authentication"]
-        }
-      ],
-      "api": {
-        "source": "openapi.yaml"
-      }
-    },
-    {
-      "tab": "Changelog",
-      "href": "/changelog"
     }
   ]
 }

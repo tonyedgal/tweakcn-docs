@@ -1,0 +1,73 @@
+---
+title: Export a theme
+description: Copy the CSS of a tweakcn theme into your app for Tailwind CSS v4 or v3.
+---
+
+After this guide, your app uses the theme from the editor. Export the CSS when
+you cannot use the shadcn CLI, or when you want your unsaved edits. To install
+with the CLI, see [Install themes with the CLI](/cli/install-themes).
+
+<Steps>
+<Step title="Open the Code dialog">
+
+Select **Code** in the top bar. The **Theme Code** dialog opens.
+
+</Step>
+<Step title="Select your Tailwind version">
+
+Open the version menu below the command and select your version.
+
+| Version | Color formats | Files |
+| --- | --- | --- |
+| Tailwind v4 | `oklch`, `hsl`, `rgb`, hex | `index.css`, `layout.tsx` |
+| Tailwind v3 | `hsl`, `rgb`, hex | `index.css`, `tailwind.config.ts`, `layout.tsx` |
+
+<Frame caption="Tailwind v3 adds a tailwind.config.ts tab.">
+![Theme Code dialog with Tailwind v3 selected](/images/code-v3.png)
+</Frame>
+
+</Step>
+<Step title="Select the color format">
+
+Open the format menu next to the version. For Tailwind v4, use `oklch`. This
+is the format of new shadcn/ui projects. For Tailwind v3, use `hsl`.
+
+</Step>
+<Step title="Copy the CSS">
+
+On the `index.css` tab, select **Copy**. Replace the theme part of your global
+CSS file with the copied CSS.
+
+For Tailwind v4, the copy has these parts. Keep any other CSS in your file.
+
+```css
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+:root { /* light colors, fonts, radius, shadows */ }
+.dark { /* dark colors */ }
+
+@theme inline { /* maps the variables to Tailwind utilities */ }
+@layer base { /* border and body defaults */ }
+```
+
+</Step>
+<Step title="Copy the Tailwind config (v3 only)">
+
+On the `tailwind.config.ts` tab, select **Copy**. Replace the `theme.extend`
+part of your config.
+
+</Step>
+<Step title="Load the fonts">
+
+On the `layout.tsx (Next.js)` tab, copy the font imports. This tab has only
+the light-mode fonts. For the full steps, see
+[Load the theme fonts](/guides/load-theme-fonts).
+
+</Step>
+<Step title="Check your app">
+
+Run your app and compare it with the editor preview in both modes.
+
+</Step>
+</Steps>

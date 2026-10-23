@@ -1,0 +1,99 @@
+---
+title: Install themes with the CLI
+description: Add a tweakcn theme to an existing shadcn/ui project with shadcn add.
+---
+
+tweakcn publishes every theme as a shadcn registry item. The shadcn CLI reads
+the item and writes the CSS variables into your global CSS file.
+
+## Before you begin
+
+- A project with `components.json`. Run `npx shadcn@latest init` if you do not have one.
+
+## Find the theme URL
+
+The URL depends on the theme type.
+
+| Theme type | URL format | Example |
+| --- | --- | --- |
+| Built-in preset | `https://tweakcn.com/r/themes/<preset>.json` | `.../r/themes/claude.json` |
+| Saved or community theme | `https://tweakcn.com/r/themes/<theme-id>` | `.../r/themes/cmvkq8481000004l1f8i0dc80` |
+
+<Note type="warning" title="No .json for saved themes">
+A saved theme URL with `.json` at the end returns HTTP 500. Remove the extension.
+</Note>
+
+The **Code** dialog in the editor shows the correct command for the current
+theme. Select your package manager at the top of the dialog.
+
+## Install the theme
+
+<Tabs>
+<Tab title="npm">
+
+```bash
+npx shadcn@latest add https://tweakcn.com/r/themes/claude.json
+```
+
+</Tab>
+<Tab title="pnpm">
+
+```bash
+pnpm dlx shadcn@latest add https://tweakcn.com/r/themes/claude.json
+```
+
+</Tab>
+<Tab title="yarn">
+
+```bash
+yarn dlx shadcn@latest add https://tweakcn.com/r/themes/claude.json
+```
+
+</Tab>
+<Tab title="bun">
+
+```bash
+bunx shadcn@latest add https://tweakcn.com/r/themes/claude.json
+```
+
+</Tab>
+</Tabs>
+
+The command changes these parts of your global CSS:
+
+- `:root` and `.dark` color variables.
+- Font, radius, spacing, letter spacing, and shadow variables.
+- The `@theme inline` block, with more than 20 extra variables.
+
+Commit your work before you install. Then you can compare the change with `git diff`.
+
+## Install an edited preset
+
+The install command for a preset always installs the original preset. Your
+edits are not in that URL. To install your edits, do one of these:
+
+- [Save the theme](/sharing/save-and-share) and use its saved theme URL.
+- Copy the CSS from the **Code** dialog. See [Export a theme](/guides/export-a-theme).
+
+## List all themes
+
+The registry index lists every built-in preset:
+
+```text
+https://tweakcn.com/r/themes/registry.json
+```
+
+To let an AI code editor install themes, add this MCP server from the editor menu
+(**⋮** > **MCP**):
+
+```json
+{
+  "mcpServers": {
+    "shadcn": {
+      "command": "npx",
+      "args": ["-y", "shadcn@canary", "registry:mcp"],
+      "env": { "REGISTRY_URL": "https://tweakcn.com/r/themes/registry.json" }
+    }
+  }
+}
+```

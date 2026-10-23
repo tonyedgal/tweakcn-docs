@@ -1,0 +1,80 @@
+---
+title: Generate a theme with AI
+description: Create a complete tweakcn theme from a text prompt or an image.
+---
+
+After this guide, you will have a theme that the AI made from your description
+or from a screenshot. The AI sets colors for both modes, fonts, radius, and
+shadows.
+
+## Before you begin
+
+- A tweakcn account. Sign in with GitHub or Google.
+- Free accounts get 5 AI requests in total. Pro gives unlimited requests.
+
+<Steps>
+<Step title="Open the Generate tab">
+
+In the editor, select **Generate**. You can also go to
+[tweakcn.com/ai](https://tweakcn.com/ai).
+
+<Frame caption="The Generate tab. Choose a mode, then write a prompt.">
+![Generate tab with Create, Remix, and Tweak modes](/images/editor-ai.png)
+</Frame>
+
+</Step>
+<Step title="Select Create">
+
+**Create** makes a new theme. To change the current theme, see
+[Enhance a theme with AI](/ai/enhance).
+
+</Step>
+<Step title="Write the prompt">
+
+Type in **Describe your theme...**. Name the colors and where each color goes.
+A specific prompt gives a better result.
+
+| Weak prompt | Strong prompt |
+| --- | --- |
+| A warm theme | Warm ivory background, off-white sidebar, white cards with beige borders, coral-orange primary, near-black text. |
+| Like Supabase but purple | `@Supabase` with a purple primary and the same dark mode. |
+
+Type `@` to mention a preset, for example `@Claude`. The AI uses that preset as
+a reference. The prompt limit is 1000 characters.
+
+</Step>
+<Step title="Add an image (optional)">
+
+Select **Image** and choose a file. The AI reads the colors from the image.
+See [Generate a theme from a screenshot](/guides/theme-from-screenshot) for a
+full example.
+
+</Step>
+<Step title="Send the prompt">
+
+Select the send arrow. The theme applies to the preview after about 15 seconds.
+
+</Step>
+<Step title="Check and save">
+
+Check both modes and the contrast. Then [save the theme](/sharing/save-and-share).
+Until you save, the theme name shows the last preset with `*`.
+
+</Step>
+</Steps>
+
+## Image limits
+
+| Limit | Value |
+| --- | --- |
+| Images for each prompt | 5 |
+| File types | PNG, JPEG, WebP, SVG |
+| Size | 4 MB for each image, 1 MB for SVG |
+
+## When a request fails
+
+| Message | Cause | Fix |
+| --- | --- | --- |
+| **Sign in for AI** | You are not signed in. | Sign in. |
+| **Get Pro** | You used your 5 free requests. | Upgrade, or edit the theme by hand. |
+| Too many requests | More than 5 requests in one minute. | Wait one minute. |
